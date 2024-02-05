@@ -1,0 +1,44 @@
+#!/bin/bash
+
+for d in $(ls -1d toehold_?)
+do
+    cd $d
+
+    length=$(echo $d | cut -d'_' -f2)
+    box=$(grep b init_conf.dat | awk '{print $3}')
+
+    if [ -s FLUX/ffs.log ]
+    then
+		cd FLUX
+		step_factor=$(echo $box $target_box | awk '{print ($1/$2)**3}')
+		echo "Scaling factor: $step_factor"
+		tail -n1 ffs.log | awk -v factor=$step_factor '{print $3*factor}' > flux.dat
+		python3 ../flux_std_dev.py > error.dat
+		awk '{print $1 / $4}' error.dat > relative_error.dat
+		cd ..
+    fi
+
+    for sd in $(ls -1d SHOOT_*)
+    do
+	if [ -s $sd/ffs.log ] && grep nsuccesses $sd/ffs.log > /dev/null
+	then
+	    p=$(tail -n1 $sd/ffs.log | awk '{print $6}')
+	    N=$(grep total_simulations $sd/ffs.toml | awk '{print $3}')
+	    echo $p  > $sd/prob.dat
+	    awk -v N=$N '{print sqrt($1*(1-$1) / N) / $1}' $sd/prob.dat > $sd/relative_error.dat
+	fi
+    done
+
+    if [ -s SHOOT_1/prob.dat ]
+    then
+	error=$(awk '{a += $1*$1;} END {print sqrt(a);}' */relative_error.dat)
+	awk -v error=$error -v l=$length 'BEGIN {a = 1} {a *=$1} END {print l, a, error * a}' */flux.dat */prob.dat > rate.dat
+	awk -v error=$error -v l=$length 'BEGIN {a = 1} {a *=$1} END {print l, 1 / a, error / a}' */flux.dat */prob.dat > steps.dat
+	cat steps.dat
+    fi
+    
+    cd ..
+done
+
+sort -n */rate.dat > rate.dat
+sort -n */steps.dat > steps.dat

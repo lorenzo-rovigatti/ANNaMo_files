@@ -1,0 +1,13 @@
+input = "../input"
+initial_seed = 5892132
+ncpus = 16
+
+total_simulations = 100000
+interface = [0, 1]
+
+starting_conf_pattern = "../FLUX/success_*.dat"
+
+[log]
+filename = "ffs.log"
+also_stderr = true
+#verbose = true

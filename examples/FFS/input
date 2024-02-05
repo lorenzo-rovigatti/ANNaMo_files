@@ -1,0 +1,85 @@
+backend = CPU
+debug = 0
+#seed = 529832
+
+sim_type = MD
+thermostat = brownian
+newtonian_steps = 53
+diff_coeff = 0.5
+
+steps = 2e9
+check_energy_every = 1e4
+check_energy_threshold = 1.e-4
+
+T = 1.0
+dt = 0.002
+verlet_skin = 0.2
+
+generate_consider_bonded_interactions = true
+energy_threshold = 30
+
+interaction_type = CGNucleicAcidsInteraction
+DPS_chain_size = 31
+DPS_interaction_matrix_file = ../dHdS_matrix.dat
+DPS_3b_lambda = 10
+DPS_3b_sigma = 0.21875
+DPS_deltaPatchMon = 0.65
+DPS_tC = 25
+DPS_dS_mod = -7.5
+DPS_alpha_mod = 0.89397
+DPS_bdG_threshold = 0
+
+reset_com_momentum = true
+reset_initial_com_momentum = true
+
+back_in_box = true
+
+DPS_semiflexibility = False
+DPS_semiflexibility_k = 11
+DPS_semiflexibility_a1 = 1
+DPS_semiflexibility_3b = True
+DPS_semiflexibility_3b_k = 4
+DPS_stacking = True
+DPS_stacking_eta = 6
+
+
+DPS_bead_size = 3
+DPS_semiflexibility_3b_exp_sigma = 0.07
+
+topology = ../topology.dat
+conf_file = ../init_conf.dat
+trajectory_file = trajectory.dat
+refresh_vel = true
+#log_file = log.dat
+no_stdout_energy = 0
+restart_step_counter = true
+energy_file = energy.dat
+print_conf_interval = 1e8
+print_energy_every = 1e8
+time_scale = linear
+
+external_forces = false
+external_forces_file = mut_trap.dat
+
+plugin_search_path = ../../oxDNA/contrib/tostiguerra:../../oxDNA/contrib/rovigatti
+
+data_output_1 = {
+	name = bonds.dat
+	print_every = 1e8
+	only_last = False
+	col_1 = {
+        	  type = Bonds
+        	  bond_energy_term_id = 2
+              bond_threshold = -4
+			  id = bonds
+    	}
+}
+
+data_output_2 = {
+	name = last_backup.dat
+	print_every = 1e5
+	only_last = true
+	col_1 = {
+        type = Configuration
+    }
+}

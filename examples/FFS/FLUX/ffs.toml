@@ -1,0 +1,11 @@
+input = "../input"
+initial_seed = 193298
+ncpus = 16
+
+desired_success_count = 1000
+interface = [-1, 0]
+
+[log]
+filename = "ffs.log"
+also_stderr = true
+#verbose = true

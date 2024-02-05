@@ -1,0 +1,13 @@
+input = "../input"
+initial_seed = 8913244
+ncpus = 16
+
+total_simulations = 100
+interface = [11, 12]
+
+starting_conf_pattern = "../SHOOT_3/success_*.dat"
+
+[log]
+filename = "ffs.log"
+also_stderr = true
+#verbose = true
