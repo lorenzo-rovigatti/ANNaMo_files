@@ -1,0 +1,30 @@
+INFO: seeding the RNG with 2064299513
+INFO: Initializing backend 
+INFO: Simulation type: MD
+INFO: The generator will try to take into account bonded interactions by choosing distances between bonded neighbours no larger than 2.000000
+INFO: Setting the maximum IO limit to 10 MB/s
+INFO: pid: 3493559
+INFO: (Cells.cpp) N_cells_side: 4, 4, 4; rcut=2.9, IS_MC: 0
+INFO: N: 1000, N molecules: 1000
+INFO: RELEASE: v3.6.0
+INFO: GIT COMMIT: e92695c7
+INFO: COMPILED ON: 11/01/24
+
+INFO: Total Running Time: 15.8578 s, per step: 0.792888 ms
+INFO: Timings, in seconds, by Timer (total, own, spent in children)
+> SimBackend                         15.858 (100.0%)        0.056 (  0.4%)       15.802 ( 99.6%)
+***> Lists                            1.603 ( 10.1%)        1.603 ( 10.1%)        0.000 (  0.0%)
+***> Thermostat                       0.030 (  0.2%)        0.030 (  0.2%)        0.000 (  0.0%)
+***> Forces                          12.348 ( 77.9%)       12.348 ( 77.9%)        0.000 (  0.0%)
+***> First Step                       0.216 (  1.4%)        0.216 (  1.4%)        0.000 (  0.0%)
+***> Observables                      1.605 ( 10.1%)        1.605 ( 10.1%)        0.000 (  0.0%)
+
+INFO: END OF THE SIMULATION, everything went OK!
+INFO: Lists updated 485 times (every ~41.237113 steps)
+INFO: Aggregated I/O statistics (set debug=1 for file-wise information)
+	274.370 KB written to files
+	 12.170 KB written to stdout/stderr
+	For a total of   0.0176 MB/s
+
+Please cite at least the following publication for any work that uses the oxDNA simulation package
+  * E. Poppleton et al., J. Open Source Softw. 8, 4693 (2023), DOI: 10.21105/joss.04693

@@ -1,0 +1,2 @@
+[console_scripts]
+oat = oxDNA_analysis_tools.entry:main

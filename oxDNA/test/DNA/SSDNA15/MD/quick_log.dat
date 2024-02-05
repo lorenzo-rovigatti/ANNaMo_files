@@ -1,0 +1,43 @@
+INFO: seeding the RNG with -1546345409
+INFO: Initializing backend 
+INFO: Simulation type not specified, using MD
+INFO: The generator will try to take into account bonded interactions by choosing distances between bonded neighbours no larger than 2.000000
+INFO: Converting temperature from Kelvin (300.000000 K) to simulation units (0.100000)
+INFO: Temperature change detected (new temperature: 26.85 C, 300.00 K), re-initialising the DNA interaction
+INFO: pid: 3492224
+INFO: (Cells.cpp) N_cells_side: 4, 4, 4; rcut=1.68377, IS_MC: 0
+INFO: N: 15, N molecules: 1
+INFO: Using randomly distributed velocities
+INFO: Initial kinetic energy: 3.331956
+INFO: RELEASE: v3.6.0
+INFO: GIT COMMIT: e92695c7
+INFO: COMPILED ON: 11/01/24
+INFO: diffusion fixed.. -13.786 -13.786
+INFO: diffusion fixed.. -10.6398 -10.6398
+INFO: diffusion fixed.. -13.0455 -13.0455
+INFO: diffusion fixed.. -14.8391 -14.8391
+INFO: diffusion fixed.. -13.9054 -13.9054
+INFO: diffusion fixed.. -11.3364 -11.3364
+INFO: diffusion fixed.. -11.6214 -11.6214
+INFO: diffusion fixed.. -10.662 -10.662
+INFO: diffusion fixed.. -10.2712 -10.2712
+INFO: diffusion fixed.. -9.45557 -9.45557
+
+INFO: Total Running Time: 9.21093 s, per step: 0.00921093 ms
+INFO: Timings, in seconds, by Timer (total, own, spent in children)
+> SimBackend                          9.211 (100.0%)        2.370 ( 25.7%)        6.841 ( 74.3%)
+***> Lists                            0.547 (  5.9%)        0.547 (  5.9%)        0.000 (  0.0%)
+***> Thermostat                       0.398 (  4.3%)        0.398 (  4.3%)        0.000 (  0.0%)
+***> Forces                           4.139 ( 44.9%)        4.139 ( 44.9%)        0.000 (  0.0%)
+***> First Step                       0.930 ( 10.1%)        0.930 ( 10.1%)        0.000 (  0.0%)
+***> Observables                      0.827 (  9.0%)        0.827 (  9.0%)        0.000 (  0.0%)
+
+INFO: END OF THE SIMULATION, everything went OK!
+INFO: Lists updated 85090 times (every ~11.752262 steps)
+INFO: Aggregated I/O statistics (set debug=1 for file-wise information)
+	133.942 KB written to files
+	 60.607 KB written to stdout/stderr
+	For a total of   0.0206 MB/s
+
+Please cite at least the following publication for any work that uses the oxDNA simulation package
+  * E. Poppleton et al., J. Open Source Softw. 8, 4693 (2023), DOI: 10.21105/joss.04693
