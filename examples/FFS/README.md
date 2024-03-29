@@ -12,9 +12,11 @@ Here we sample the rate at which the systems goes from state $A$ (the incumbent 
 * $Q = n_B$ otherwise;
 
 If $\Phi(A)$ is the flux across $\lambda_{-1}^0$ starting from a state $Q = -2$, the overall $A \to B$ rate is
+
 $$
 R = \Phi(A) \prod_{Q=1}^{Q=Q_{\rm max}} P(\lambda_{Q-1}^Q|\lambda_{Q-2}^{Q-1})
 $$
+
 where $P(\lambda_{Q-1}^Q|\lambda_{Q-2}^{Q-1})$ is the probability that a trajectory that has crossed the $\lambda_{Q-2}^{Q-1}$ interface crosses the $\lambda_{Q-1}^Q$ interface before returning back to $A$.
 
 In practice, $\Phi(A)$ is evaluated by starting $N$ configurations in $A$ and computing the rate of crossing $\lambda_{-1}^0$, while $P(\lambda_{Q-1}^Q|\lambda_{Q-2}^{Q-1})$ is estimated by launching $N$ simulations from state $Q-1$ and counting how many reach state $Q$.
