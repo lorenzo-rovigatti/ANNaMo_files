@@ -19,7 +19,7 @@ generate_consider_bonded_interactions = true
 energy_threshold = 30
 
 interaction_type = CGNucleicAcidsInteraction
-DPS_chain_size = 4
+DPS_chain_size = 4 
 DPS_interaction_matrix_file = dHdS_matrix.dat
 #DPS_3b_lambda = 0
 DPS_3b_sigma = 0.21875
@@ -63,7 +63,7 @@ time_scale = linear
 external_forces = false
 external_forces_file = mut_trap.dat
 
-plugin_search_path = ../../../../oxDNA/contrib/tostiguerra:../../../../oxDNA/contrib/rovigatti
+plugin_search_path = /home/francescotg/oxDNA/contrib/tostiguerra:/home/francescotg/oxDNA/contrib/rovigatti
 
 data_output_1 = {
 	name = ree.dat
