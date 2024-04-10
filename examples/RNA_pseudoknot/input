@@ -38,13 +38,13 @@ DPS_semiflexibility = False
 DPS_semiflexibility_k = 11
 DPS_semiflexibility_a1 = 1
 DPS_semiflexibility_3b = True
-DPS_semiflexibility_3b_k = 3.5
+DPS_semiflexibility_3b_k = 4
 DPS_stacking = True
-DPS_stacking_eta = 9
+DPS_stacking_eta = 6
 
 
 DPS_bead_size = 3
-DPS_semiflexibility_3b_exp_sigma = 0.1
+DPS_semiflexibility_3b_exp_sigma = 0.07
 
 #max_backbone_force = 50
 
@@ -63,7 +63,7 @@ time_scale = linear
 external_forces = false
 external_forces_file = mut_trap.dat
 
-plugin_search_path = ../../oxDNA/contrib/tostiguerra:../../oxDNA/contrib/rovigatti
+plugin_search_path = /home/francescotg/oxDNA/contrib/tostiguerra:/home/francescotg/oxDNA/contrib/rovigatti
 
 data_output_1 = {
 	name = ree.dat
